@@ -1,0 +1,14 @@
+form.create
+	h2.create__head Создать новы пост
+	label.create__label(for='inputLabel') Заголовок
+
+	input.create__input(placeholder='Введите название' id='inputLabel' name='title')
+	label.create__label-body-text(for='input-body-text') Text
+
+	textarea.create__body-text(placeholder='Введите текст поста' id='input-body-text' name='fulltext')
+	label.create__label-select(for='create-select') Тип
+
+	select.create__select-choose(id='create-select' name='type')
+		option.create__option(value='новость' selected) Новость
+		option.create__option(value='заметка') Заметка
+	button.create__btn-submit.startBtn  Отправить

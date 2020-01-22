@@ -11,8 +11,13 @@ import { CreateComponent } from "./js/components/create.component/create.compone
 import { FavoritesComponent } from "./js/components/favorites.component/favorites.component";
 
 new HeaderComponents('.top');
-const create = new CreateComponent();
-const post = new PostComponent();
-const favorites = new FavoritesComponent();
+const create = new CreateComponent('.create');
+const post = new PostComponent('.post');
+const favorites = new FavoritesComponent( '.favorites' );
 const navigation = new NavigationComponent( '.menu' );
 
+navigation.registrationTabs( [
+    { name: 'post', component: post },
+    { name: 'create', component: create },
+    { name: 'favorites', component: favorites },
+] );

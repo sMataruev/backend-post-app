@@ -7,7 +7,15 @@ export class HeaderComponents extends Component{
         super( el );
     }
     init() {
+        if ( localStorage.getItem( 'headerHide' ) ) {
+            this.hide();
+        }
         const startBtn = this.$el.querySelector( '.top__btn' );
-        console.log(startBtn);
+        startBtn.addEventListener( 'click', startBtnClickHendler.bind( this ) );
     }
+}
+
+function startBtnClickHendler( ) {
+    this.hide();
+    localStorage.setItem( 'headerHide', JSON.stringify( true ) );
 }
